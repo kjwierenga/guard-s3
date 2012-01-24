@@ -35,7 +35,7 @@ class Guard::S3 < Guard::Guard
           log "Uploading #{path}"
           AWS::S3::S3Object.store(path, open(file), @bucket, {
             :access => @s3_permissions
-          }.merge(:extra_headers)) 
+          }.merge(@extra_headers)) 
         end
       rescue Exception => e
         log e.message

@@ -29,8 +29,8 @@ module ::Guard
       paths.each do |path|
         file  = File.join(pwd, path)        
         begin
-          if exists?(file)
-            log "Nothing uploaded. #{file} already exists!"
+          if exists?(path)
+            log "Nothing uploaded. #{path} already exists!"
           else
             log "Uploading #{path}"
             S3Object.store(path, open(file), @bucket, {:access => @s3_permissions}) 

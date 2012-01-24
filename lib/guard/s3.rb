@@ -8,7 +8,7 @@ end unless defined?(AWS::S3)
 require 'guard'
 require 'guard/guard'
 
-class Guard::S3 < Guard
+class Guard::S3 < Guard::Guard
   include AWS::S3
   attr_reader :s3_connection, :pwd
 

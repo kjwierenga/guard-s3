@@ -21,6 +21,7 @@ module ::Guard
       )
       @bucket         = options[:bucket]
       @s3_permissions = options[:s3_permissions]
+      @extra_headerts = options[:extra_headers]
       @debug          = true
       @pwd            = watchdir || Dir.pwd
     end
@@ -33,7 +34,9 @@ module ::Guard
             log "Nothing uploaded. #{path} already exists!"
           else
             log "Uploading #{path}"
-            S3Object.store(path, open(file), @bucket, {:access => @s3_permissions}) 
+            S3Object.store(path, open(file), @bucket, {
+              :access => @s3_permissions
+            }.merge(:extra_headers)) 
           end
         rescue Exception => e
           log e.message

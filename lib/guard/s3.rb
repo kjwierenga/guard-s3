@@ -9,7 +9,7 @@ require 'guard'
 require 'guard/guard'
 
 module ::Guard
-  class S3 < Guard
+  class ::S3 < Guard
     include AWS::S3
     attr_reader :s3_connection, :pwd
 
@@ -34,7 +34,7 @@ module ::Guard
             log "Nothing uploaded. #{path} already exists!"
           else
             log "Uploading #{path}"
-            S3Object.store(path, open(file), @bucket, {
+            AWS::S3::S3Object.store(path, open(file), @bucket, {
               :access => @s3_permissions
             }.merge(:extra_headers)) 
           end

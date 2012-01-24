@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = '>= 1.3.6'
   s.rubyforge_project         = "guard-s3"
 
-  s.files         = Dir.glob('{lib}/**/*') + %w[LICENSE README.md]
+  s.files         = Dir.glob('{lib}/**/*') + %w[README.md]
   # s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   # s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = 'lib'

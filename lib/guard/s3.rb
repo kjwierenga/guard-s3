@@ -58,7 +58,7 @@ module ::Guard
 
     def watchdir
       # TODO: Nicer way to detect Guard watching a directory explicitly?
-      ::Guard::Dsl.class_variable_get(:@@options).watchdir
+      ::Guard::Dsl.send(:class_variable_get, :@@options).watchdir
     end
   end
 end

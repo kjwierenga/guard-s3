@@ -4,7 +4,7 @@ require 'guard/s3/version'
 
 Gem::Specification.new do |s|
   s.name        = "guard-s3"
-  s.version     = Guard::S3::VERSION
+  s.version     = Guard::S3Version::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["James Welsh"]
   s.email       = ["james at supermatter dot com"]
